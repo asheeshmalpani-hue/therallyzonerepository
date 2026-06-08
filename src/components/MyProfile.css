@@ -1,0 +1,97 @@
+/* Compact tab styling for MyProfile */
+/* Compact tab styling for MyProfile */
+/* Compact tab styling for MyProfile */
+.my-profile-page {
+	max-width: 760px;
+	margin: 40px auto;
+	background: #fff;
+	border-radius: 14px;
+	box-shadow: 0 4px 18px rgba(30,42,90,0.12);
+	padding: 36px 32px 28px 32px;
+}
+.profile-tabs button {
+	padding: 6px 18px;
+	font-size: 1rem;
+	font-weight: 600;
+	border: 1.5px solid #b3c6e6;
+	border-radius: 8px;
+	background: #f5f8ff;
+	color: #1a237e;
+	cursor: pointer;
+	transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+.profile-tabs button.active {
+	background: #1a237e;
+	color: #fff;
+	border-color: #1a237e;
+}
+.profile-tab-content {
+	min-height: 220px;
+	padding: 12px 0 0 0;
+}
+.user-matches-table {
+	font-size: 0.92rem;
+	width: 100%;
+	border-radius: 8px;
+	box-shadow: 0 1px 4px rgba(57,73,171,0.05);
+}
+.user-matches-table th, .user-matches-table td {
+	padding: 8px 10px;
+}
+
+.my-profile-page {
+  max-width: 760px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(30,42,90,0.12);
+  padding: 36px 32px 28px 32px;
+}
+.profile-tabs button {
+  padding: 10px 28px;
+  font-size: 1.18rem;
+  font-weight: 600;
+  border: 2px solid #b3c6e6;
+  border-radius: 10px;
+  background: #f5f8ff;
+  color: #1a237e;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border-color 0.18s;
+}
+.profile-tab-content {
+  min-height: 320px;
+  padding: 18px 0 0 0;
+}
+.user-matches-table {
+  font-size: 1.05rem;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(57,73,171,0.08);
+}
+.user-matches-table th, .user-matches-table td {
+  padding: 12px 16px;
+}
+
+/* --- Mobile adjustments --- */
+@media (max-width: 640px) {
+	.my-profile-page {
+		margin: 12px;
+		padding: 16px;
+		max-width: 100%;
+	}
+
+	.profile-tabs button {
+		padding: 8px 14px;
+		font-size: 0.95rem;
+	}
+
+	.profile-tab-content {
+		padding: 12px 0 0 0;
+		min-height: auto;
+	}
+
+	.user-matches-table th, .user-matches-table td {
+		padding: 8px 10px;
+		font-size: 0.95rem;
+	}
+}

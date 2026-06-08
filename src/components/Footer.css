@@ -1,0 +1,134 @@
+/* --- Base Footer Styling --- */
+.site-footer {
+    background-color: #1a237e; /* Deep Indigo (matching header) */
+    color: #e8eaf6; /* Light Lavender text */
+    padding: 20px 60px 10px; /* Reduced padding */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-top: 5px solid #8bc34a; /* Tennis Green highlight */
+    margin-top: 1px;
+}
+
+/* --- Main Content Layout --- */
+.footer-content {
+    display: flex;
+    justify-content: space-around; /* Distributes sections evenly */
+    flex-wrap: wrap; /* Allows sections to wrap on smaller screens */
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Section Headings (h3, h4) --- */
+.site-footer h3, .site-footer h4 {
+    color: #ffffff; /* Pure White for headings */
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- General Text and Links --- */
+.site-footer p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.site-footer a {
+    color: #8bc34a; /* Tennis Green for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+    color: #ffffff; /* White on hover */
+    text-decoration: underline;
+}
+
+/* Make footer links easier to tap and more visible on mobile */
+.footer-links a {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.footer-links a:focus {
+    outline: 3px solid rgba(139,195,74,0.18);
+}
+
+/* --- Navigation List Styling --- */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+/* --- Copyright Bar and Social Links --- */
+.footer-bottom {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.social-links a {
+    color: #e8eaf6;
+    font-size: 1.2rem;
+    margin-left: 15px;
+    opacity: 0.7;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #8bc34a; /* Tennis Green on hover */
+    opacity: 1;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 30px 20px 15px;
+        text-align: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-brand, .footer-links, .footer-contact {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .footer-links ul {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    /* On small screens, make links underlined for clarity */
+    .footer-links a {
+        text-decoration: underline;
+    }
+
+    .footer-bottom {
+        flex-direction: column-reverse; /* Put social links above copyright */
+        gap: 10px;
+        text-align: center;
+    }
+
+    .social-links {
+        margin-bottom: 10px;
+    }
+
+    .social-links a {
+        margin: 0 8px;
+    }
+}
