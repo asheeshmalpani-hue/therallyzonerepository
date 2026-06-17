@@ -11,7 +11,7 @@ function UpcomingOtherTournaments() {
         const fetchTournaments = async () => {
             try {
                 setLoading(true);
-                const response = await fetch("http://localhost:5000/api/tournaments");
+                const response = await fetch("https://therallyzonebackendrepository-production.up.railway.app/api/tournaments");
                 if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
                 const data = await response.json();
                 setTournaments(data.filter(row => row.category && row.category.toLowerCase() !== 'ladder').map(row => ({

@@ -10,7 +10,7 @@ function MyProfile({ currentUser }) {
   useEffect(() => {
     if (!currentUser?.username && !currentUser?.fullName) return;
     const userName = currentUser.username || currentUser.fullName;
-    fetch(`http://localhost:5000/api/user-matches/${userName}`)
+    fetch(`https://therallyzonebackendrepository-production.up.railway.app/api/user-matches/${userName}`)
       .then(res => res.ok ? res.json() : [])
       .then(matches => {
         setUserMatches(matches);

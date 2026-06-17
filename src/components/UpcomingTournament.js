@@ -139,7 +139,7 @@ const isDuplicatePair = (player1, player2) => {
     return;
   }
       try {
-        const res = await fetch('http://localhost:5000/api/match-draw', {
+        const res = await fetch('https://therallyzonebackendrepository-production.up.railway.app/api/match-draw', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -187,7 +187,7 @@ const isDuplicatePair = (player1, player2) => {
   useEffect(() => {
     const fetchRankings = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/user-rankings');
+        const res = await fetch('https://therallyzonebackendrepository-production.up.railway.app/api/user-rankings');
         if (!res.ok) throw new Error('Failed to fetch rankings');
         const data = await res.json();
         setRankings(data);
@@ -208,7 +208,7 @@ const isDuplicatePair = (player1, player2) => {
     const fetchTournaments = async () => {
       try {
         setLoading(true);
-        const response = await fetch("http://localhost:5000/api/tournaments");
+        const response = await fetch("https://therallyzonebackendrepository-production.up.railway.app/api/tournaments");
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.json();
         // Map backend fields to expected frontend names (like Home.js)
@@ -226,7 +226,7 @@ const isDuplicatePair = (player1, player2) => {
         })));
         // Fetch event names for each tournament
         data.forEach(row => {
-          fetch(`http://localhost:5000/api/tournament-event-name/${row.id}`)
+          fetch(`https://therallyzonebackendrepository-production.up.railway.app/api/tournament-event-name/${row.id}`)
             .then(res => res.ok ? res.json() : null)
             .then(ev => {
               if (ev && ev.event_name) {
@@ -247,7 +247,7 @@ const isDuplicatePair = (player1, player2) => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/users');
+        const res = await fetch('https://therallyzonebackendrepository-production.up.railway.app/api/users');
         if (!res.ok) throw new Error('Failed to fetch users');
         const data = await res.json();
         setUserList(data);
@@ -261,7 +261,7 @@ const isDuplicatePair = (player1, player2) => {
   useEffect(() => {
     const fetchAttendance = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/attendance');
+        const res = await fetch('https://therallyzonebackendrepository-production.up.railway.app/api/attendance');
         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
         const data = await res.json();
         setAttendanceLog(data);
@@ -298,7 +298,7 @@ const isDuplicatePair = (player1, player2) => {
   // Fetch and show match schedule
   const viewMatchSchedule = async (tournamentId, tournamentName, draw_id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/match-draw/${draw_id}`);
+      const res = await fetch(`https://therallyzonebackendrepository-production.up.railway.app/api/match-draw/${draw_id}`);
       if (!res.ok) throw new Error('Failed to fetch match schedule');
       let matches = await res.json();
       if (matches.length === 0) {
@@ -391,7 +391,7 @@ const isDuplicatePair = (player1, player2) => {
   // Fetch and show match results
   const viewMatchResults = async (tournamentId, tournamentName, draw_id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/match-draw/${draw_id}`);
+      const res = await fetch(`https://therallyzonebackendrepository-production.up.railway.app/api/match-draw/${draw_id}`);
       if (!res.ok) throw new Error('Failed to fetch match results');
       const allMatches = await res.json();
       const completedMatches = allMatches.filter(m => m.winner);
@@ -549,7 +549,7 @@ if (match.player2_p && match.player2_p.trim() !== '') {
     const tournamentLocation = tournament?.Location || tournament?.location || '';
     const drawName = tournament?.draw_name || '';
     try {
-      const res = await fetch(`http://localhost:5000/api/match-draw/${draw_id}`);
+      const res = await fetch(`https://therallyzonebackendrepository-production.up.railway.app/api/match-draw/${draw_id}`);
       if (res.ok) {
         const existingMatches = await res.json();
 
@@ -755,7 +755,7 @@ const allPlayers = Array.from(playerMap.values());
         };
         // eslint-disable-next-line no-console
         console.log('Submitting OUT attendance:', debugPayload);
-        res = await fetch(`http://localhost:5000/api/attendance/${attendanceId}`, {
+        res = await fetch(`https://therallyzonebackendrepository-production.up.railway.app/api/attendance/${attendanceId}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(debugPayload)
@@ -776,13 +776,13 @@ const allPlayers = Array.from(playerMap.values());
         // Find if attendance record exists for this tournament and user (either as in_user or in_partner)
         const existing = attendanceLog.find(a => a.tournament_name === tournamentName && (a.in_user === userName || a.in_partner === userName || a.out_user === userName || a.out_partner === userName));
         if (existing) {
-          res = await fetch(`http://localhost:5000/api/attendance/${existing.id}`, {
+          res = await fetch(`https://therallyzonebackendrepository-production.up.railway.app/api/attendance/${existing.id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(debugPayload)
           });
         } else {
-          res = await fetch('http://localhost:5000/api/attendance', {
+          res = await fetch('https://therallyzonebackendrepository-production.up.railway.app/api/attendance', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(debugPayload)
@@ -796,13 +796,13 @@ const allPlayers = Array.from(playerMap.values());
       if (partnerName) {
         const partnerRecord = attendanceLog.find(a => a.tournament_name === tournamentName && a.in_user === partnerName);
         if (partnerRecord) {
-          await fetch(`http://localhost:5000/api/attendance/${partnerRecord.id}`, {
+          await fetch(`https://therallyzonebackendrepository-production.up.railway.app/api/attendance/${partnerRecord.id}`, {
             method: 'DELETE'
           });
         }
       }
       // Refresh attendance log from backend
-      const attRes = await fetch('http://localhost:5000/api/attendance');
+      const attRes = await fetch('https://therallyzonebackendrepository-production.up.railway.app/api/attendance');
       if (attRes.ok) {
         const data = await attRes.json();
         setAttendanceLog(data);
@@ -884,7 +884,7 @@ const allPlayers = Array.from(playerMap.values());
           //draw_id
         //};
         //// Update the record
-        //const res = await fetch(`http://localhost:5000/api/attendance/${recordId}`, {
+        //const res = await fetch(`https://therallyzonebackendrepository-production.up.railway.app/api/attendance/${recordId}`, {
          // method: 'PUT',
           //headers: { 'Content-Type': 'application/json' },
           //body: JSON.stringify(debugPayload)
@@ -903,13 +903,13 @@ const allPlayers = Array.from(playerMap.values());
         //};
         //let res;
         //if (recordId) {
-         // res = await fetch(`http://localhost:5000/api/attendance/${recordId}`, {
+         // res = await fetch(`https://therallyzonebackendrepository-production.up.railway.app/api/attendance/${recordId}`, {
           //  method: 'PUT',
            // headers: { 'Content-Type': 'application/json' },
             //body: JSON.stringify(debugPayload)
           //});
         //} else {
-         // res = await fetch('http://localhost:5000/api/attendance', {
+         // res = await fetch('https://therallyzonebackendrepository-production.up.railway.app/api/attendance', {
           //  method: 'POST',
            // headers: { 'Content-Type': 'application/json' },
             //body: JSON.stringify(debugPayload)
@@ -921,13 +921,13 @@ const allPlayers = Array.from(playerMap.values());
       //if (partnerName) {
       //  const partnerRecord = attendanceLog.find(a => a.tournament_name === tournamentName && a.in_user === partnerName);
       //  if (partnerRecord) {
-       //   await fetch(`http://localhost:5000/api/attendance/${partnerRecord.id}`, {
+       //   await fetch(`https://therallyzonebackendrepository-production.up.railway.app/api/attendance/${partnerRecord.id}`, {
         //    method: 'DELETE'
          // });
         //}
       //}
       // Refresh attendance log from backend
-      //const attRes = await fetch('http://localhost:5000/api/attendance');
+      //const attRes = await fetch('https://therallyzonebackendrepository-production.up.railway.app/api/attendance');
       //if (attRes.ok) {
        // const data = await attRes.json();
         //setAttendanceLog(data);
@@ -968,7 +968,7 @@ const allPlayers = Array.from(playerMap.values());
             const tournamentLocation = tournament ? (tournament.location || tournament.Location) : undefined;
             try {
               // Fetch latest rankings
-              const rankingsRes = await fetch('http://localhost:5000/api/user-rankings');
+              const rankingsRes = await fetch('https://therallyzonebackendrepository-production.up.railway.app/api/user-rankings');
               let latestRankings = rankings;
               if (rankingsRes.ok) {
                 latestRankings = await rankingsRes.json();
@@ -978,7 +978,7 @@ const allPlayers = Array.from(playerMap.values());
               if (!drawId) {
                 throw new Error('Draw ID not found');
             }
-              const res = await fetch(`http://localhost:5000/api/match-draw/${drawId}`);
+              const res = await fetch(`https://therallyzonebackendrepository-production.up.railway.app/api/match-draw/${drawId}`);
               if (!res.ok) throw new Error('Failed to refresh matches');
               let allMatches = await res.json();
               //console.log('REFRESH MATCHES:', allMatches);

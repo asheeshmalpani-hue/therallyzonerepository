@@ -46,7 +46,7 @@ function TournamentSearch() {
     }));
 
     try {
-      const res = await fetch(`http://localhost:5000/api/match-draw/${drawId}`);
+      const res = await fetch(`https://therallyzonebackendrepository-production.up.railway.app/api/match-draw/${drawId}`);
       if (!res.ok) throw new Error('Failed to fetch draw matches');
       const allMatches = await res.json();
       setMatchResultsDialog(prev => ({
@@ -99,7 +99,7 @@ function TournamentSearch() {
     const fetchTournaments = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5000/api/tournaments/closed');
+        const response = await fetch('https://therallyzonebackendrepository-production.up.railway.app/api/tournaments/closed');
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.json();
         setTournaments(data);

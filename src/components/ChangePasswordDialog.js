@@ -28,7 +28,7 @@ function ChangePasswordDialog({ open, onClose }) {
       return;
     }
     try {
-      const res = await fetch(`http://localhost:5000/api/users/${user.id}/change-password`, {
+      const res = await fetch(`https://therallyzonebackendrepository-production.up.railway.app/api/users/${user.id}/change-password`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ oldPassword, newPassword })

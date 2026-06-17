@@ -42,7 +42,7 @@ function AdminResetPassword() {
         setLoading(false);
         return;
       }
-      const res = await fetch(`http://localhost:5000/api/users/${userId}/reset-password`, {
+      const res = await fetch(`https://therallyzonebackendrepository-production.up.railway.app/api/users/${userId}/reset-password`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ newPassword, user })

@@ -14,7 +14,7 @@ function MatchScheduleDialog({ tournamentId, tournamentName, tournamentCategory,
             onClose();
             return;
           }
-          const res = await fetch(`http://localhost:5000/api/tournaments/${tournamentId}/status`, {
+          const res = await fetch(`https://therallyzonebackendrepository-production.up.railway.app/api/tournaments/${tournamentId}/status`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ status: 'Closed' })
@@ -112,7 +112,7 @@ function MatchScheduleDialog({ tournamentId, tournamentName, tournamentCategory,
       // Only update if winner is selected
       if (winner) {
         try {
-          const res = await fetch(`http://localhost:5000/api/match-draw/${match.id}/result`, {
+          const res = await fetch(`https://therallyzonebackendrepository-production.up.railway.app/api/match-draw/${match.id}/result`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
