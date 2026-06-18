@@ -21,7 +21,7 @@ function TournamentSearch() {
     const drawOptions = Array.isArray(tournament.draws) && tournament.draws.length > 0
       ? tournament.draws
       : [];
-
+    console.log("Draw options:", drawOptions);
     setMatchResultsDialog({
       open: true,
       tournamentId: tournament.id,
