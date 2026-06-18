@@ -61,7 +61,7 @@ function TournamentSearch() {
   };
 
   const handleDrawChange = async e => {
-    console.log("Selected value:", e.target.value);
+    alert("Selected value = " + e.target.value);
     const selectedDrawId = e.target.value;
     const selectedDraw = matchResultsDialog.drawOptions.find(draw => String(draw.id) === String(selectedDrawId));
     setMatchResultsDialog(prev => ({
