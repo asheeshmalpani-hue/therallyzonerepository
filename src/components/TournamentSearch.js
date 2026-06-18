@@ -21,7 +21,7 @@ function TournamentSearch() {
     const drawOptions = Array.isArray(tournament.draws) && tournament.draws.length > 0
       ? tournament.draws
       : [];
-    console.log("Draw options:", drawOptions);
+    
     setMatchResultsDialog({
       open: true,
       tournamentId: tournament.id,
@@ -61,7 +61,6 @@ function TournamentSearch() {
   };
 
   const handleDrawChange = async e => {
-    alert("Selected value = " + e.target.value);
     const selectedDrawId = e.target.value;
     const selectedDraw = matchResultsDialog.drawOptions.find(draw => String(draw.id) === String(selectedDrawId));
     setMatchResultsDialog(prev => ({
@@ -148,7 +147,7 @@ function TournamentSearch() {
   return (
     <main className="search-page-container">
       <div className="search-header-row">
-        <h1 className="page-title">🔍 Completed Ladders - TEST999</h1>
+        <h1 className="page-title">🔍 Completed Ladders</h1>
         <div className="filter-panel-inline">
           <div className="filter-group">
             <label htmlFor="location-filter">Location</label>
