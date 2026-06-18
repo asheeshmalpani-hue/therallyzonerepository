@@ -148,7 +148,7 @@ function TournamentSearch() {
   return (
     <main className="search-page-container">
       <div className="search-header-row">
-        <h1 className="page-title">🔍 Completed Ladders</h1>
+        <h1 className="page-title">🔍 Completed Ladders - TEST999</h1>
         <div className="filter-panel-inline">
           <div className="filter-group">
             <label htmlFor="location-filter">Location</label>
