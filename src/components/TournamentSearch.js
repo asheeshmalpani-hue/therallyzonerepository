@@ -61,8 +61,9 @@ function TournamentSearch() {
   };
 
   const handleDrawChange = async e => {
+    console.log("Selected value:", e.target.value);
     const selectedDrawId = e.target.value;
-    const selectedDraw = matchResultsDialog.drawOptions.find(draw => String(draw.draw_id) === String(selectedDrawId));
+    const selectedDraw = matchResultsDialog.drawOptions.find(draw => String(draw.id) === String(selectedDrawId));
     setMatchResultsDialog(prev => ({
       ...prev,
       selectedDrawId,
@@ -181,7 +182,7 @@ function TournamentSearch() {
                     >
                       <option value="">Select draw</option>
                       {matchResultsDialog.drawOptions.map(draw => (
-                        <option key={draw.draw_id} value={draw.draw_id}>{draw.draw_name}</option>
+                        <option key={draw.id} value={draw.id}>{draw.draw_name}</option>
                       ))}
                     </select>
                     <button type="button" onClick={closeMatchResultsDialog} className="details-button" style={{ padding: '8px 14px' }}>
