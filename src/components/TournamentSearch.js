@@ -102,6 +102,7 @@ function TournamentSearch() {
         const response = await fetch('https://therallyzonebackendrepository-production.up.railway.app/api/tournaments/closed');
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.json();
+        console.log("Tournaments data:", data);
         setTournaments(data);
         setError(null);
       } catch (e) {
