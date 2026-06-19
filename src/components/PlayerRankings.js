@@ -30,6 +30,8 @@ function PlayerRankings() {
   // Support both 'Location' and 'location' fields from backend
   const getLocation = r => r.Location || r.location || '';
   const locations = [...new Set(rankings.map(getLocation).filter(Boolean))];
+  console.log(rankings);
+console.log(locations);
   const categories = [...new Set(rankings.filter(r => getLocation(r) === selectedLocation).map(r => r.tournament_category))];
   const draws = [...new Set(
     rankings
