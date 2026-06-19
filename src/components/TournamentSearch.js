@@ -106,8 +106,10 @@ function TournamentSearch() {
         setTournaments(data);
         setError(null);
       } catch (e) {
-        setError("Failed to load tournaments. Please try again.");
-      } finally {
+  console.log("Tournament fetch error:", e);
+  alert("Tournament fetch error: " + e.message);
+  setError("Failed to load tournaments. Please try again.");
+} finally {
         setLoading(false);
       }
     };
