@@ -8,6 +8,7 @@ function Header({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showChangePassword, setShowChangePassword] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -59,7 +60,7 @@ function Header({ children }) {
   return (
     <div className="header-wrapper">
       <div className="top-header">
-        <button className="hamburger-btn">
+        <button className="hamburger-btn" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
           ☰
     </button>
         <div className="site-branding">
@@ -70,7 +71,7 @@ function Header({ children }) {
         </div>
       </div>
       <div className="layout-row">
-        <aside className="sidebar">
+        <aside className={`sidebar ${mobileMenuOpen ? "open" : ""}`}>
           <nav className="main-nav">
             <Link to="/" onClick={() => { window.dispatchEvent(new Event('homeLinkClicked')); }}>Home</Link>
           <Link to="/tournaments">Tournaments</Link>
