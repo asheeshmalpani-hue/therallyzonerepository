@@ -220,8 +220,12 @@ header nav a::after {
 }
 
     .site-title {
-        font-size: 1.25rem;
-    }
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
 
     .logo-placeholder {
     margin-left: auto;
@@ -230,14 +234,27 @@ header nav a::after {
 }
 
     .sidebar {
-        width: 100%;
-        float: none;
-        padding-left: 0;
-    }
+    display: none;
+    width: 100%;
+    min-width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.sidebar.open {
+    display: block;
+}
 
     .app-content {
         margin-left: 0;
     }
+.layout-row {
+    display: block;
+}
+
+.app-content {
+    width: 100%;
+}
 
     .main-nav {
         gap: 8px;
