@@ -10,12 +10,12 @@ function PlayerRankings() {
 
   useEffect(() => {
     // Fetch users for display names
-    fetch("/api/users")
+    fetch("https://therallyzonebackendrepository-production.up.railway.app/api/users")
       .then(res => res.json())
       .then(setUserList)
       .catch(() => setUserList([]));
     // Fetch rankings
-    fetch("/api/user-rankings")
+    fetch("https://therallyzonebackendrepository-production.up.railway.app/api/user-rankings")
       .then(res => res.json())
       .then(data => {
         setRankings(data);
