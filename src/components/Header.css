@@ -1,3 +1,11 @@
+.hamburger-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+}
 /* --- Global App Shell Styling --- */
 .app-shell {
     display: flex;
@@ -198,6 +206,9 @@ header nav a::after {
 }
 
 @media (max-width: 640px) {
+    .hamburger-btn {
+        display: block;
+    }
     .top-header {
         flex-direction: column;
         align-items: flex-start;
