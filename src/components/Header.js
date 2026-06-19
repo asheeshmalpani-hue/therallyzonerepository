@@ -59,6 +59,9 @@ function Header({ children }) {
   return (
     <div className="header-wrapper">
       <div className="top-header">
+        <button className="hamburger-btn">
+          ☰
+    </button>
         <div className="site-branding">
           <h1 className="site-title">The Rally Zone Sports Management</h1>
         </div>
