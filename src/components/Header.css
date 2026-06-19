@@ -206,6 +206,9 @@ header nav a::after {
 }
 
 @media (max-width: 640px) {
+   .logo-placeholder {
+    display: none;
+}
     .hamburger-btn {
         display: block;
     }
