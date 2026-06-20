@@ -50,8 +50,12 @@ function Login() {
         
         // Redirect to the home page or a dashboard after a delay
         setTimeout(() => {
-          navigate(redirectPath);
-        }, 1500);
+  navigate(redirectPath);
+
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 100);
+}, 1500);
 
       } else {
         // Failed Login (Invalid credentials)
