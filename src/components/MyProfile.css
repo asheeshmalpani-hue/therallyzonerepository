@@ -89,7 +89,14 @@
 		padding: 12px 0 0 0;
 		min-height: auto;
 	}
-
+	
+	.user-matches-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        width: 100%;
+    }
+	
 	.user-matches-table th, .user-matches-table td {
 		padding: 8px 10px;
 		font-size: 0.95rem;
