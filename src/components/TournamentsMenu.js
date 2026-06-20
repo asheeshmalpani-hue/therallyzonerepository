@@ -1,4 +1,5 @@
 import React from "react";
+import "./TournamentsMenu.css";
 import UpcomingOtherTournaments from "./UpcomingOtherTournaments";
 import UpcomingTournament from "./UpcomingTournament";
 import TournamentSearch from "./TournamentSearch";
@@ -8,8 +9,8 @@ export default function TournamentsMenu({ currentUser }) {
   const [activeTab, setActiveTab] = React.useState('upcoming');
 
   return (
-    <div style={{ maxWidth: 900, margin: "40px auto", padding: 32, textAlign: "center" }}>
-      <div style={{ display: "flex", justifyContent: "center", gap: 0, marginBottom: 32 }}>
+    <div className="tournaments-menu-container">
+      <div className="tournament-tabs">
         <button
           className={"tournament-tab-btn" + (activeTab === 'upcoming' ? ' active' : '')}
           style={{
