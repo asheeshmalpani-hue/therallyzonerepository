@@ -8,7 +8,7 @@
 .tournament-tabs {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-bottom: 32px;
 }
 
