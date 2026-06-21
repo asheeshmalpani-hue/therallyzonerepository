@@ -1061,14 +1061,7 @@ const allPlayers = Array.from(playerMap.values());
                     const dayNum = parseInt(day,10);
                     const attendanceDisabled = t.status && t.status.toLowerCase() !== 'open';
                     return (
-  <div
-    key={t.id}
-    className="tournament-item"
-    style={{
-      overflowX: 'auto',
-      WebkitOverflowScrolling: 'touch'
-    }}
-  >
+                      <div key={t.id} className="tournament-item">
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12, marginBottom: 8, width: '100%' }}>
                           <div style={{ fontWeight: 700, fontSize: '1.13rem', color: '#fff', background: '#ff9800', padding: '6px 14px', borderRadius: '7px', textAlign: 'left', letterSpacing: '1px', boxShadow: '0 2px 8px rgba(255, 152, 0, 0.10)', flex: '1 1 auto', minWidth: 0 }}>
                             {t.name}
@@ -1174,51 +1167,7 @@ const allPlayers = Array.from(playerMap.values());
                             )}
                           </div>
                         </div>
-                        <div className="tournament-attendance" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minWidth: 120, margin: '8px 0 0 0' }}>
-                          <div className="attendance-controls" style={{ display: 'flex', gap: 24, alignItems: 'center', justifyContent: 'center', width: '100%' }}>
-                            <div className="attendance-column" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 500, boxSizing: 'border-box' }}>
-                              <button
-                                className={`attendance-btn in ${attendance[t.id] === 'in' ? 'active' : ''}`}
-                                type="button"
-                                onClick={() => handleAttendanceClick(t.id, 'in', t.name)}
-                                aria-label="Mark In (thumbs up)"
-                                title="In"
-                                disabled={attendanceDisabled}
-                                style={{ marginBottom: 2, width: '100%' }}
-                              >
-                                <span className="emoji">👍</span>
-                                <span className="label">In</span>
-                              </button>
-                              <div style={{ minHeight: 18, maxHeight: 48, width: '100%', overflowY: 'visible' }}>
-                                {inUsers.length > 0 && (
-                                  <div className="attendance-names in" style={{ fontSize: '0.93em', marginTop: 2, textAlign: 'left', wordBreak: 'break-word', whiteSpace: 'normal', width: '100%', minWidth: '100%' }}>
-                                    {inUsers.map((pair, idx) => `${pair}${idx < inUsers.length - 1 ? ', ' : ''}`)}
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                            <div className="attendance-column" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 200, boxSizing: 'border-box' }}>
-                              <button
-                                className={`attendance-btn out ${attendance[t.id] === 'out' ? 'active' : ''}`}
-                                type="button"
-                                onClick={() => handleAttendanceClick(t.id, 'out', t.name)}
-                                aria-label="Mark Out (thumbs down)"
-                                title="Out"
-                                disabled={attendanceDisabled}
-                                style={{ marginBottom: 2, width: '100%' }}
-                              >
-                                <span className="emoji">👎</span>
-                                <span className="label">Out</span>
-                              </button>
-                              <div style={{ minHeight: 18, maxHeight: 48, width: '100%', overflowY: 'visible' }}>
-                                {outUsers.length > 0 && (
-                                  <div className="attendance-names out" style={{ fontSize: '0.93em', marginTop: 2, textAlign: 'left', wordBreak: 'break-word', whiteSpace: 'normal', width: '100%', minWidth: '100%' }}>
-                                    {outUsers.map((pair, idx) => `${pair}${idx < outUsers.length - 1 ? ', ' : ''}`)}
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                          </div>
+                        
                         </div>
                       </div>
                     );
