@@ -1061,7 +1061,14 @@ const allPlayers = Array.from(playerMap.values());
                     const dayNum = parseInt(day,10);
                     const attendanceDisabled = t.status && t.status.toLowerCase() !== 'open';
                     return (
-                      <div key={t.id} className="tournament-item">
+  <div
+    key={t.id}
+    className="tournament-item"
+    style={{
+      overflowX: 'auto',
+      WebkitOverflowScrolling: 'touch'
+    }}
+  >
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12, marginBottom: 8, width: '100%' }}>
                           <div style={{ fontWeight: 700, fontSize: '1.13rem', color: '#fff', background: '#ff9800', padding: '6px 14px', borderRadius: '7px', textAlign: 'left', letterSpacing: '1px', boxShadow: '0 2px 8px rgba(255, 152, 0, 0.10)', flex: '1 1 auto', minWidth: 0 }}>
                             {t.name}
