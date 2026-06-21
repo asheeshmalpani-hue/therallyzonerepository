@@ -1212,8 +1212,7 @@ const allPlayers = Array.from(playerMap.values());
                               </div>
                             </div>
                           </div>
-                          */}
-                        </div>
+                          </div>
                       </div>
                     );
                   })
