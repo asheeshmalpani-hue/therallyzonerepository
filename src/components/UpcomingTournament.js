@@ -1167,7 +1167,6 @@ const allPlayers = Array.from(playerMap.values());
                             )}
                           </div>
                         </div>
-                        {/*
                         <div className="tournament-attendance" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minWidth: 120, margin: '8px 0 0 0' }}>
                           <div className="attendance-controls" style={{ display: 'flex', gap: 24, alignItems: 'center', justifyContent: 'center', width: '100%' }}>
                             <div className="attendance-column" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: 500, boxSizing: 'border-box' }}>
