@@ -604,8 +604,9 @@
     color: #1a237e;
 }
 @media (max-width: 768px) {
-  .tournament-item {
-    border: 3px solid red !important;
+  .home-layout,
+  .main-column,
+  .hero-section {
     overflow-x: auto !important;
   }
 }
