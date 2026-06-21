@@ -603,3 +603,9 @@
     background: #f7f9ff;
     color: #1a237e;
 }
+@media (max-width: 768px) {
+  .tournament-item {
+    border: 3px solid red !important;
+    overflow-x: auto !important;
+  }
+}
