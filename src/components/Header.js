@@ -64,11 +64,16 @@ function Header({ children }) {
           ☰
     </button>
         <div className="site-branding">
-          <h1 className="site-title">The Rally Zone Sports Management</h1>
-        </div>
-        <div className="logo-placeholder">
-          Logo
-        </div>
+  <img
+    src="/logo.png"
+    alt="The Rally Zone"
+    className="site-logo"
+  />
+
+  <h1 className="site-title">
+    The Rally Zone Sports Management
+  </h1>
+</div>
       </div>
       <div className="layout-row">
         <aside className={`sidebar ${mobileMenuOpen ? "open" : ""}`}>
