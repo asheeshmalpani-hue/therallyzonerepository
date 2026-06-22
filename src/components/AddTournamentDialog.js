@@ -115,7 +115,7 @@ export default function AddTournamentDialog({ open, onClose }) {
       return;
     }
     try {
-      const res = await fetch('/api/admin/add-tournament-with-events-draws', {
+      const res = await fetch("https://therallyzonebackendrepository-production.up.railway.app/api/admin/add-tournament-with-events-draws", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ tournament, teams })
