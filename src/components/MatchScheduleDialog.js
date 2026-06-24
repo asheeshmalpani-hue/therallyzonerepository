@@ -126,9 +126,14 @@ function MatchScheduleDialog({ tournamentId, tournamentName, tournamentCategory,
             })
           });
           if (!res.ok) {
-            console.error("Failed for match:", match.id);
-            continue;
-          }
+  const errorText = await res.text();
+
+  console.error("Failed for match:", match.id);
+  console.error("Status:", res.status);
+  console.error("Response:", errorText);
+
+  continue;
+}
           updatedCount++; // increment ONLY on success
         } catch (e) {
           // Optionally handle error per match
