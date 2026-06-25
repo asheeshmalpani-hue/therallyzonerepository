@@ -212,12 +212,13 @@ const isDuplicatePair = (player1, player2) => {
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data = await response.json();
         // Map backend fields to expected frontend names (like Home.js)
+        console.log("Tournament row:", data[0]);
         setTournaments(data.map(row => ({
           id: row.id,
           name: row.name,
           category: row.category,
           ageCriteria: row.Age_criteria,
-          Location: row.Location,
+          Location: row.Location || row.location,
           status: row.status,
           date: row.date,
           fees: row.fee,
